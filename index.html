@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Partow Moradi</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Blob Animation */
+        @keyframes blob {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.6;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+        }
+
+        /* Text Animations */
+        @keyframes text-pop-up {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-up {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-text-pop-up {
+            animation: text-pop-up 1s ease-out;
+        }
+
+        .animate-slide-up {
+            animation: slide-up 1s ease-out;
+        }
+
+        .animate-blob {
+            animation: blob 10s infinite;
+        }
+
+        .fade-in {
+            animation: fade-in 1s ease-out;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<!-- Navbar -->
+<nav class="bg-gradient-to-r from-blue-600 to-purple-600 py-6 shadow-lg sticky top-0 z-50 transition-transform duration-300 hover:translate-y-[-4px] hover:shadow-2xl cursor-pointer">
+    <div class="container mx-auto flex flex-col md:flex-row justify-center items-center">
+        <!-- Navigation Links -->
+        <ul class="flex space-x-8 mt-4 md:mt-0">
+            <li class="relative group">
+                <a href="#about" class="text-white text-lg md:text-xl font-semibold transition-transform duration-300 transform hover:scale-110 hover:text-yellow-300">About</a>
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-yellow-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </li>
+            <li class="relative group">
+                <a href="#projects" class="text-white text-lg md:text-xl font-semibold transition-transform duration-300 transform hover:scale-110 hover:text-yellow-300">Experience</a>
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-yellow-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </li>
+            <li class="relative group">
+                <a href="#skills" class="text-white text-lg md:text-xl font-semibold transition-transform duration-300 transform hover:scale-110 hover:text-yellow-300">Skills</a>
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-yellow-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </li>
+            <li class="relative group">
+                <a href="#contact" class="text-white text-lg md:text-xl font-semibold transition-transform duration-300 transform hover:scale-110 hover:text-yellow-300">Contact</a>
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-yellow-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Smooth Scroll Script -->
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+<!-- CSS for custom cursor and name animation -->
+<style>
+    /* Custom cursor */
+    .cursor-pointer {
+        cursor: url('https://example.com/path-to-your-custom-cursor.png'), auto;
+    }
+
+    /* Name moving animation */
+    @keyframes nameMove {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(10px); }
+        100% { transform: translateX(0); }
+    }
+
+    .animate-name-move {
+        animation: nameMove 2s ease-in-out infinite;
+    }
+</style>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-purple-900 via-indigo-900 to-blue-900 text-white py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-no-repeat bg-center bg-cover opacity-30" style="background-image: url('https://example.com/abstract-background-pattern.png');"></div>
+        <div class="container mx-auto text-center relative z-10">
+            <h2 class="text-5xl font-bold animate-text-pop-up">Hi, I'm Partow Moradi</h2>
+            <p class="mt-4 text-xl text-gray-300 animate-slide-up">Software Engineer & Data Scientist</p>
+            <p class="mt-6 text-lg max-w-3xl mx-auto animate-slide-up">
+                I transform complex data into actionable insights and craft elegant software solutions. With expertise in diverse technologies and a creative mindset, I build solutions that drive progress and innovation.
+            </p>
+            <p class="mt-6 text-lg font-semibold text-yellow-300 animate-bounce">
+                "Innovate, Analyze, and Elevate"
+            </p>
+            <a href="#projects" class="mt-8 inline-block bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-transform duration-300 transform hover:scale-105 animate-bounce">
+                Explore My Work
+            </a>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+            <div class="absolute bottom-0 right-0 w-64 h-64 bg-purple-600 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob"></div>
+            <div class="absolute top-0 left-0 w-48 h-48 bg-blue-600 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+            <div class="absolute top-1/3 left-1/3 w-72 h-72 bg-indigo-600 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-100 py-16 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-no-repeat bg-center bg-cover opacity-20" style="background-image: url('https://example.com/geometric-pattern.png');"></div>
+        
+        <!-- Animated Background Blobs -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 left-0 w-48 h-48 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse animation-delay-2000"></div>
+            <div class="absolute bottom-0 right-0 w-56 h-56 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse animation-delay-3000"></div>
+            <div class="absolute bottom-1/2 left-1/2 w-64 h-64 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse animation-delay-4000"></div>
+        </div>
+    
+        <!-- Content Container -->
+        <div class="container mx-auto text-center relative z-10">
+            <!-- Header -->
+            <h3 class="text-4xl font-extrabold text-gray-800 tracking-wide mb-6 animate-text-pop-up">About Me</h3>
+            
+            <!-- Photo and Bio -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
+                <!-- Photo -->
+                <div class="relative w-full md:w-1/3 max-w-xs mx-auto">
+                    <img src="img/Profile.JPG" alt="Your Photo" class="w-full h-full object-cover rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                </div>
+                <!-- Bio Text -->
+                <div class="w-full md:w-2/3 text-left max-w-3xl mx-auto">
+                    <p class="text-lg text-gray-700 mb-6 animate-slide-up">
+                        As a dedicated Software Engineer and Data Scientist, I specialize in turning complex data into actionable insights and developing high-quality software solutions. My expertise spans various technologies including Java, Python, and modern web development frameworks. I excel at:
+                    </p>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700 animate-slide-up animate-delay-200">
+                        <li><strong>Java Development:</strong> Designing and implementing scalable Java applications with a deep understanding of the Spring Framework.</li>
+                        <li><strong>Data Science:</strong> Utilizing Python and tools like Pandas, NumPy, and Scikit-learn to analyze data, build predictive models, and drive business decisions.</li>
+                        <li><strong>Oracle Database Administration:</strong> Managing and optimizing Oracle databases, ensuring data integrity, performance tuning, and effective backup and recovery strategies.</li>
+                    </ul>
+                    <div class="mt-12">
+                        <a href="#skills" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full text-lg font-medium relative overflow-hidden group">
+                            <span class="absolute inset-0 bg-indigo-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+                            <span class="relative z-10">See My Skills</span>
+                            <!-- Animated movement -->
+                            <span class="absolute inset-0 border-2 border-white border-opacity-30 rounded-full animate-shake"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CSS for button animation -->
+    <style>
+        @keyframes shake {
+            0% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            100% { transform: translateX(0); }
+        }
+    
+        .animate-shake {
+            animation: shake 0.6s ease-in-out infinite;
+            border-width: 2px;
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+    
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+    
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.05); opacity: 0.6; }
+            100% { transform: scale(1); opacity: 0.3; }
+        }
+    </style>
+    
+    <!-- Education Section -->
+<section id="education" class="bg-gradient-to-b from-gray-200 to-gray-400 py-16 relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 bg-no-repeat bg-center bg-cover opacity-20" style="background-image: url('https://example.com/geometric-pattern.png');"></div>
+    
+    <!-- Glowing Effects and Animated Blobs -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-green-500 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob animate-pulse"></div>
+        <div class="absolute top-0 left-0 w-48 h-48 bg-orange-500 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob animate-pulse animation-delay-2000"></div>
+        <div class="absolute top-1/3 left-1/3 w-72 h-72 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob animate-pulse animation-delay-4000"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-green-600 to-transparent opacity-30 mix-blend-screen filter blur-2xl animate-glow"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto text-center relative z-10">
+        <h3 class="text-4xl font-extrabold text-gray-800 tracking-widest uppercase animate-text-pop-up">Education</h3>
+        <p class="mt-4 text-lg text-gray-700 animate-slide-up">Here’s a glimpse into my academic journey and achievements.</p>
+        
+        <div class="flex flex-wrap justify-center mt-12 space-y-8">
+            <!-- Education Card 1 -->
+            <div class="w-full md:w-1/3 p-4 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                <div class="bg-white shadow-lg rounded-lg p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-purple-500 rounded-full transform translate-x-2 -translate-y-2"></div>
+                    <h4 class="text-xl font-semibold text-gray-800">Bachelor’s Degree in Industrial Engineering</h4>
+                    <p class="mt-2 text-gray-600">University of Technology - Graduated 2020</p>
+                    <p class="mt-2 text-gray-600">Focused on data analysing, systems, and aystems structures.</p>
+                </div>
+            </div>
+            <!-- Education Card 2 -->
+            <div class="w-full md:w-1/3 p-4 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                <div class="bg-white shadow-lg rounded-lg p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-blue-500 rounded-full transform translate-x-2 -translate-y-2"></div>
+                    <h4 class="text-xl font-semibold text-gray-800">Master’s Degree in Data Science</h4>
+                    <p class="mt-2 text-gray-600">PLUS University of Salzburg - Current</p>
+                    <p class="mt-2 text-gray-600">Specialized in machine learning, data analysis, and big data technologies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CSS for enhanced magical effects -->
+<style>
+    @keyframes blob {
+        0% { transform: translateX(0) translateY(0) scale(1); }
+        50% { transform: translateX(-10px) translateY(10px) scale(1.1); }
+        100% { transform: translateX(0) translateY(0) scale(1); }
+    }
+
+    @keyframes glow {
+        0% { opacity: 0.4; }
+        50% { opacity: 0.6; }
+        100% { opacity: 0.4; }
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    @keyframes text-pop-up {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slide-up {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-blob {
+        animation: blob 6s infinite;
+    }
+
+    .animate-pulse {
+        animation: pulse 2s infinite;
+    }
+
+    .animate-glow {
+        animation: glow 4s infinite;
+    }
+
+    .animate-text-pop-up {
+        animation: text-pop-up 1s ease-out;
+    }
+
+    .animate-slide-up {
+        animation: slide-up 1s ease-out;
+    }
+</style>
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-100 py-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-no-repeat bg-center bg-cover opacity-15" style="background-image: url('https://example.com/abstract-pattern.png');"></div>
+        <div class="container mx-auto text-center relative z-10">
+            <h3 class="text-4xl font-bold text-gray-800 mb-6 animate-fade-in">Experience</h3>
+            <p class="text-lg text-gray-700 mb-12 animate-fade-in animate-delay-200">Here is what I am involved in.</p>
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- Project Card 1 -->
+                <div class="w-full md:w-1/3 p-4">
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-500 ease-in-out hover:shadow-2xl hover:shadow-indigo-500/30">
+                        <img src="img/dba.jpg" alt="Project 1" class="w-full h-40 object-cover transition-transform duration-300 transform hover:rotate-1">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2 transition-transform duration-300 transform hover:translate-x-1 hover:translate-y-1">Database Admin</h4>
+                            <p class="text-gray-600 transition-opacity duration-300 hover:opacity-80">This role entails the creation of Oracle databases using various methods, including manual setups, Oracle Managed Files (OMF), and Database Configuration Assistance (DBCA). An important aspect of this position is tuning SQL queries to enhance performance, utilizing tools like Oracle SQL Tuning Advisor and SQL Performance Analyzer.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="w-full md:w-1/3 p-4">
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-500 ease-in-out hover:shadow-2xl hover:shadow-indigo-500/30">
+                        <img src="img/redlink.jpg" alt="Project 2" class="w-full h-40 object-cover transition-transform duration-300 transform hover:rotate-1">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2 transition-transform duration-300 transform hover:translate-x-1 hover:translate-y-1">Solution Engineer</h4>
+                            <p class="text-gray-600 transition-opacity duration-300 hover:opacity-80">have led the development of integrated applications, engineered APIs for enhanced data accessibility, and specialized in backend development using Java and Spring Boot. My work focuses on automation, system integration, and ensuring consistency across platforms, driving significant improvements in processing times and overall system efficiency. With a keen eye for detail and a commitment to excellence, I deliver scalable and robust solutions tailored to meet business needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="w-full md:w-1/3 p-4">
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-500 ease-in-out hover:shadow-2xl hover:shadow-indigo-500/30">
+                        <img src="img/plus.jpg" alt="Project 3" class="w-full h-40 object-cover transition-transform duration-300 transform hover:rotate-1">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2 transition-transform duration-300 transform hover:translate-x-1 hover:translate-y-1">Universtity Projects</h4>
+                            <p class="text-gray-600 transition-opacity duration-300 hover:opacity-80">Conducting research as a Data Scientist with expertise in software development.
+                                • Utilizing Python and R scripting languages, proficient in Pandas, NumPy, TensorFlow,
+                                and PyTorch for data analysis and machine learning applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Skills Section -->
+            <section id="skills" class="bg-gradient-to-b from-gray-200 to-gray-400 py-16 relative overflow-hidden">
+                <div class="absolute inset-0 bg-no-repeat bg-center bg-cover opacity-10" style="background-image: url('https://example.com/abstract-pattern2.png');"></div>
+                <div class="container mx-auto text-center relative z-10">
+                    <h3 class="text-4xl font-extrabold text-gray-800 tracking-widest uppercase mb-6 animate-fade-in">Skills</h3>
+                    <p class="text-lg text-gray-700 mb-12 animate-slide-up animate-delay-200">Crafting solutions with creativity and precision</p>
+                    <div class="flex flex-wrap justify-center gap-8">
+                        <!-- Skill Card 1: Java Development -->
+                        <div class="w-full md:w-1/3 p-4">
+                            <div class="bg-white shadow-xl rounded-lg p-6 relative transform hover:scale-105 hover:rotate-1 transition-transform duration-500 ease-in-out hover:bg-gradient-to-r hover:from-blue-100 hover:to-blue-300">
+                                <div class="absolute top-0 right-0 w-16 h-16 bg-blue-500 rounded-full transform translate-x-2 -translate-y-2 animate-ping"></div>
+                                <h4 class="text-xl font-semibold text-blue-600 mb-2">Java Development</h4>
+                                <p class="text-gray-600">1 year experience in Java and Spring Framework</p>
+                            </div>
+                        </div>
+                        <!-- Skill Card 2: Data Science -->
+                        <div class="w-full md:w-1/3 p-4">
+                            <div class="bg-white shadow-xl rounded-lg p-6 relative transform hover:scale-105 hover:rotate-1 transition-transform duration-500 ease-in-out hover:bg-gradient-to-r hover:from-green-100 hover:to-green-300">
+                                <div class="absolute top-0 right-0 w-16 h-16 bg-green-500 rounded-full transform translate-x-2 -translate-y-2 animate-ping"></div>
+                                <h4 class="text-xl font-semibold text-green-600 mb-2">Data Science</h4>
+                                <p class="text-gray-600">Expertise in Python, Pandas, and Scikit-learn</p>
+                            </div>
+                        </div>
+                        <!-- Skill Card 3: Oracle Database -->
+                        <div class="w-full md:w-1/3 p-4">
+                            <div class="bg-white shadow-xl rounded-lg p-6 relative transform hover:scale-105 hover:rotate-1 transition-transform duration-500 ease-in-out hover:bg-gradient-to-r hover:from-red-100 hover:to-red-300">
+                                <div class="absolute top-0 right-0 w-16 h-16 bg-red-500 rounded-full transform translate-x-2 -translate-y-2 animate-ping"></div>
+                                <h4 class="text-xl font-semibold text-red-600 mb-2">Oracle Database</h4>
+                                <p class="text-gray-600">2+ years experience in managing and optimizing Oracle databases effectively</p>
+                            </div>
+                        </div>
+                        <!-- Skill Card 4: Programming Languages -->
+                        <div class="w-full md:w-1/3 p-4">
+                            <div class="bg-white shadow-xl rounded-lg p-6 relative transform hover:scale-105 hover:rotate-1 transition-transform duration-500 ease-in-out hover:bg-gradient-to-r hover:from-gray-100 hover:to-gray-300">
+                                <div class="absolute top-0 right-0 w-16 h-16 bg-gray-500 rounded-full transform translate-x-2 -translate-y-2 animate-ping"></div>
+                                <h4 class="text-xl font-semibold text-gray-600 mb-2">Programming Languages</h4>
+                                <p class="text-gray-600">SQL, PL/SQ, Java, JavaScript (Node.js), Python, R</p>
+                            </div>
+                        </div>
+                        <!-- Skill Card 5: DevOps Tools -->
+                        <div class="w-full md:w-1/3 p-4">
+                            <div class="bg-white shadow-xl rounded-lg p-6 relative transform hover:scale-105 hover:rotate-1 transition-transform duration-500 ease-in-out hover:bg-gradient-to-r hover:from-teal-100 hover:to-teal-300">
+                                <div class="absolute top-0 right-0 w-16 h-16 bg-teal-500 rounded-full transform translate-x-2 -translate-y-2 animate-ping"></div>
+                                <h4 class="text-xl font-semibold text-teal-600 mb-2">DevOps Tools</h4>
+                                <p class="text-gray-600">Docker, Kubernetes</p>
+                            </div>
+                        </div>
+                        <!-- Skill Card 6: Additional Technologies -->
+                        <div class="w-full md:w-1/3 p-4">
+                            <div class="bg-white shadow-xl rounded-lg p-6 relative transform hover:scale-105 hover:rotate-1 transition-transform duration-500 ease-in-out hover:bg-gradient-to-r hover:from-indigo-100 hover:to-indigo-300">
+                                <div class="absolute top-0 right-0 w-16 h-16 bg-indigo-500 rounded-full transform translate-x-2 -translate-y-2 animate-ping"></div>
+                                <h4 class="text-xl font-semibold text-indigo-600 mb-2">Additional Technologies</h4>
+                                <p class="text-gray-600">GIT, RESTful APIs, Postman, JIRA, Agile/Scrum methodologies, Web Services</p>
+                            </div>
+                        </div>
+                        <!-- Skill Card 7: Operating Systems & Platforms -->
+                        <div class="w-full md:w-1/3 p-4">
+                            <div class="bg-white shadow-xl rounded-lg p-6 relative transform hover:scale-105 hover:rotate-1 transition-transform duration-500 ease-in-out hover:bg-gradient-to-r hover:from-purple-100 hover:to-purple-300">
+                                <div class="absolute top-0 right-0 w-16 h-16 bg-purple-500 rounded-full transform translate-x-2 -translate-y-2 animate-ping"></div>
+                                <h4 class="text-xl font-semibold text-purple-600 mb-2">Operating Systems & Platforms</h4>
+                                <p class="text-gray-600">Windows Server, Linux</p>
+                            </div>
+                        </div>
+                        <!-- Skill Card 8: Database -->
+                        <div class="w-full md:w-1/3 p-4">
+                            <div class="bg-white shadow-xl rounded-lg p-6 relative transform hover:scale-105 hover:rotate-1 transition-transform duration-500 ease-in-out hover:bg-gradient-to-r hover:from-yellow-100 hover:to-yellow-300">
+                                <div class="absolute top-0 right-0 w-16 h-16 bg-yellow-500 rounded-full transform translate-x-2 -translate-y-2 animate-ping"></div>
+                                <h4 class="text-xl font-semibold text-yellow-600 mb-2">Database</h4>
+                                <p class="text-gray-600">Oracle, MySQL, MongoDB, PostgreSQL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Languages Section -->
+        <section id="languages" class="bg-gradient-to-b from-gray-100 to-gray-300 py-16 relative overflow-hidden">
+            <div class="absolute inset-0 bg-no-repeat bg-center bg-cover opacity-20" style="background-image: url('https://example.com/language-pattern.png');"></div>
+            <div class="container mx-auto text-center relative z-10">
+                <h3 class="text-4xl font-extrabold text-gray-800 tracking-widest uppercase mb-6 animate-fade-in">Languages</h3>
+                <p class="text-lg text-gray-700 mb-12 animate-slide-up animate-delay-200">Communicating effectively in multiple languages</p>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <!-- Language Card 1 -->
+                    <div class="w-full md:w-1/3 p-4">
+                        <div class="bg-white shadow-xl rounded-lg p-6 text-gray-700 transform hover:scale-105 hover:shadow-2xl transition-transform duration-500 ease-in-out">
+                            <div class="absolute top-0 right-0 w-16 h-16 bg-blue-200 rounded-full transform translate-x-2 -translate-y-2 opacity-30 animate-pulse"></div>
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">English</h4>
+                            <p class="text-gray-600">Fluent</p>
+                        </div>
+                    </div>
+                    <!-- Language Card 2 -->
+                    <div class="w-full md:w-1/3 p-4">
+                        <div class="bg-white shadow-xl rounded-lg p-6 text-gray-700 transform hover:scale-105 hover:shadow-2xl transition-transform duration-500 ease-in-out">
+                            <div class="absolute top-0 right-0 w-16 h-16 bg-green-200 rounded-full transform translate-x-2 -translate-y-2 opacity-30 animate-pulse"></div>
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">German</h4>
+                            <p class="text-gray-600">Professional Proficiency</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+            <div class="mt-12">
+                <a href="#contact" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-indigo-700 transition-transform duration-300 transform hover:scale-105 hover:rotate-1">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+        <!-- Animated Particles -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 left-0 w-64 h-64 bg-gradient-to-r from-pink-300 via-purple-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+            <div class="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-r from-yellow-300 via-red-400 to-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+        </div>
+    </section>
+        <!-- Magical Elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 left-0 w-32 h-32 bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+            <div class="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-r from-yellow-300 via-red-400 to-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+        </div>
+    </section>
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-100 py-12 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-no-repeat bg-center bg-cover opacity-10" style="background-image: url('https://example.com/abstract-pattern2.png');"></div>
+    
+        <!-- Contact Form Container -->
+        <div class="container mx-auto text-center relative z-10">
+            <h3 class="text-3xl font-semibold text-gray-800 mb-4 animate-text-pop-up">Contact Me</h3>
+            <p class="text-base text-gray-700 mb-6 animate-slide-up">I’d love to hear from you. Whether you have a project idea or just want to connect, feel free to reach out!</p>
+    
+            <!-- Contact Form -->
+            <form id="contactForm" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+                <div class="flex flex-col space-y-3">
+                    <input type="text" name="name" placeholder="Your Name" required class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-shadow duration-300 shadow-sm hover:shadow-md">
+                    <input type="email" name="email" placeholder="Your Email" required class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-shadow duration-300 shadow-sm hover:shadow-md">
+                    <textarea name="message" rows="4" placeholder="Your Message" required class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-shadow duration-300 shadow-sm hover:shadow-md"></textarea>
+                    <button type="submit" class="bg-indigo-600 text-white px-5 py-2 rounded-full text-base font-medium hover:bg-indigo-700 transition-transform duration-300 transform hover:scale-105">Send</button>
+                </div>
+            </form>
+        </div>
+    
+        <!-- Animated Background Blobs -->
+        <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+            <div class="absolute bottom-0 right-0 w-48 h-48 bg-red-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+            <div class="absolute top-0 left-0 w-36 h-36 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-1/2 left-1/2 w-24 h-24 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto text-center">
+            <p class="text-sm mb-4">&copy; 2024 Partow Moradi. All rights reserved.</p>
+            <p class="text-lg font-semibold mb-6">Stay Connected</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-300 hover:text-blue-500 transition-colors duration-300 ease-in-out">LinkedIn</a>
+                <a href="https://github.com/Prtwmoradi" class="text-gray-300 hover:text-gray-400 transition-colors duration-300 ease-in-out">GitHub</a>
+            </div>
+            <p class="mt-6 text-sm text-gray-400">Crafted with care. &hearts; by Partow Moradi</p>
+        </div>
+    </footer>
+    
+    <!-- Tailwind CSS (if you're using a CDN, ensure this is included correctly) -->
+    <!-- If using Tailwind via CDN, make sure to include it correctly, else remove this line -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Your custom JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contactForm');
+    
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault(); // Prevent default form submission
+    
+                // Collect form data
+                const formData = new FormData(form);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    message: formData.get('message')
+                };
+    
+                try {
+                    // Send form data to backend
+                    const response = await fetch('http://localhost:2000/contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+    
+                    // Check if the response is OK
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+    
+                    const result = await response.json();
+    
+                    if (result.success) {
+                        alert('Message sent successfully!');
+                        form.reset(); // Clear the form fields after successful submission
+                    } else {
+                        alert('Failed to send message');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred while sending the message.');
+                }
+            });
+        });
+    </script>
