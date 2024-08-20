@@ -515,19 +515,14 @@
             <p class="mt-6 text-sm text-gray-400">Crafted with care. &hearts; by Partow Moradi</p>
         </div>
     </footer>
-    
-    <!-- Tailwind CSS (if you're using a CDN, ensure this is included correctly) -->
-    <!-- If using Tailwind via CDN, make sure to include it correctly, else remove this line -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Your custom JS -->
+    <!-- Custom JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('contactForm');
-    
+
             form.addEventListener('submit', async (event) => {
                 event.preventDefault(); // Prevent default form submission
-    
+
                 // Collect form data
                 const formData = new FormData(form);
                 const data = {
@@ -535,24 +530,24 @@
                     email: formData.get('email'),
                     message: formData.get('message')
                 };
-    
+
                 try {
                     // Send form data to backend
-                    const response = await fetch('http://localhost:2000/contact', {
+                    const response = await fetch('http://localhost:3000/contact', { // Ensure this matches your backend URL and port
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify(data)
                     });
-    
+
                     // Check if the response is OK
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
-    
+
                     const result = await response.json();
-    
+
                     if (result.success) {
                         alert('Message sent successfully!');
                         form.reset(); // Clear the form fields after successful submission
